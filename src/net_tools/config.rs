@@ -30,7 +30,7 @@ impl Config {
             None => return Err("Didn't get a local port argument"),
         };
 
-        let local_ep = SocketAddr::from_str(["127.0.0.1", local_port].join(":").as_str()).unwrap();
+        let local_ep = SocketAddr::from_str(["0.0.0.0", local_port].join(":").as_str()).unwrap();
         let remote_ep = SocketAddr::from_str([remote_ip, remote_port].join(":").as_str()).unwrap();
 
         Ok(Config { local_ep, remote_ep })
